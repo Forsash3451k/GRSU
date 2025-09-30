@@ -1,8 +1,12 @@
 import sys
 import math
 
-index = int(input("Введите цифру в названии файла, который вы хотите открыть (к примеру X в X.WCData.txt): "))
-file = open(str(index) + ".WCData.txt", "r")
+index = int(input("Введите цифру в названии файла, который вы хотите открыть (к примеру X в X.WCData.txt) или -1, если хотите открыть свой файл: "))
+if (index == -1):
+    path_f = str(input("Введите название вашего файла (к примеру MyFile.txt): "))
+    file = open(path_f, "r")
+else:
+    file = open(str(index) + ".WCData.txt", "r")
 lines = file.readlines()
 sum = 0
 print("Time     WC temp     WC Effect\n------------------------------")
