@@ -18,9 +18,7 @@ month_d = {"January": 31, "February": 28, "March": 31, "April": 30, "May": 31, "
 days_max = int(month_d[month_str])
 year = int(year)
 if ((year % 4 == 0 and year % 4 != 0) or year % 4 == 0):
-    leapYear = True
-else:
-    leapYear = False
+    month_d["February"] = 29
 
 count = 3
 count = int(count)
