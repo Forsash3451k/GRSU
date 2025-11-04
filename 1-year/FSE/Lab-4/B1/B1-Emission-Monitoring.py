@@ -46,12 +46,15 @@ for data in file.readlines():
             if (min1 > downfall or min1 == -1):
                 min1 = downfall
             sum += downfall
-print("Error         Day    Line")
+if (len(errors) > 1):
+    print("Error         Day    Line")
 for data in reversed(errors):
     str1, str2, str3 = data.split()
     print(f"{str1:<8} {str2:>8}  {str3:>6}")
+if (len(errors) > 1):
+    print()    
 
-print("\nDay Amount Graph")
+print("Day Amount Graph")
 for day_t in days_d:
     day_t = int(day_t) 
     downfall_t = float(days_d[day_t - 0])
