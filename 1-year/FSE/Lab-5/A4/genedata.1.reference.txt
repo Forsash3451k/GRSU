@@ -1,4 +1,4 @@
-Dzemyanovich Mikhail
+Dwight Barnette
 Genetic Searching
 --------------------------------------------------------------------------
 001   mode   PREDICTED: similar to double homeobox
@@ -6,8 +6,8 @@ amino-acid occurs:
 R          17
 --------------------------------------------------------------------------
 002   search   LKSQ
-organism				protein
-Homo sapiens (Human)          TRAF interacting protein TANK isoform b
+organism                 protein
+Homo sapiens (Human)     TRAF interacting protein TANK isoform b
 --------------------------------------------------------------------------
 003   diff   C-FLIP AMPA glutamate   6.8 kDa mitochondrial proteolipid
 amino-acids difference:
@@ -19,9 +19,9 @@ E          11
 --------------------------------------------------------------------------
 005   diff   Lsm3 protein   Drosophila melanogaster [Fragment]
 amino-acids difference:
-173
+156
 --------------------------------------------------------------------------
 006   search   TPRFGKTFDA
-organism				protein
-Homo sapiens (Human)          pituitary tumor-transforming protein 1
+organism                 protein
+Homo sapiens (Human)     pituitary tumor-transforming protein 1
 --------------------------------------------------------------------------

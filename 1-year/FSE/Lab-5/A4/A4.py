@@ -12,15 +12,15 @@ def decode(seq):
 
 def search(data, seq):
     seq = decode(seq)
-    print("organism				protein")
+    print("organism				protein", file=output_file)
     found = False
     for protein in data:
         name, organism, amino = protein.split('\t')
         if amino.find(seq) != -1:
             found = True
-            print(f"{organism}          {name}")
+            print(f"{organism}          {name}", file=output_file)
     if not found:
-        print("NOT FOUND")
+        print("NOT FOUND", file=output_file)
 
 def diff(data, name1, name2):
     amino1 = ""
@@ -35,16 +35,16 @@ def diff(data, name1, name2):
     if amino1 == "" or amino2 == "":
         print("MISSING:")
         if amino1 == "":
-            print(name1)
+            print(name1, file=output_file)
         if amino2 == "":
-            print(name2)
+            print(name2, file=output_file)
     else:
         res = abs(len(amino1) - len(amino2))
         for i in range(0, min(len(amino1), len(amino2))):
             if amino1[i] != amino2[i]:
                 res += 1
-        print("amino-acids difference:")
-        print(res)
+        print("amino-acids difference:", file=output_file)
+        print(res, file=output_file)
 
 def mode(data, mname):
     seq = ""
@@ -53,8 +53,8 @@ def mode(data, mname):
         if name == mname:
             seq = decode(amino)
     if seq == "":
-        print("MISSING:")
-        print(mname)
+        print("MISSING:", file=output_file)
+        print(mname, file=output_file)
     else:
         acids = {f"{seq[0]}":0}
         for i in range(0, len(seq)):
@@ -65,29 +65,31 @@ def mode(data, mname):
         for name, count in acids.items():
             if count > acids[maximal] or (count == acids[maximal] and name < maximal):
                 maximal = name
-        print("amino-acid occurs:")
-        print(f"{maximal}          {acids[maximal]}")
+        print("amino-acid occurs:", file=output_file)
+        print(f"{maximal}          {acids[maximal]}", file=output_file)
 
 index = input("Введите цифру в названии файла, который вы хотите открыть (к примеру X в commands.X.txt и sequences.X.txt): ")
 data = open("./sequences." + index +".txt", "r").readlines()
 commands = open("./commands." + index +".txt", "r").readlines()
 
+output_file = open("./genedata." + index + ".txt", "w", encoding="utf-8")
+
 counter = 1
 separator = "--------------------------------------------------------------------------"
 
-print("Dzemyanovich Mikhail\nGenetic Searching")
+print("Dzemyanovich Mikhail\nGenetic Searching", file=output_file)
 for line in commands:
-    print(separator)
+    print(separator, file=output_file)
     arguments = line.split('\t')
     arguments[-1] = arguments[-1][:-1]
     if arguments[0] == "search":
-        print(f"{counter:0>3}   search   {arguments[1]}")
+        print(f"{counter:0>3}   search   {arguments[1]}", file=output_file)
         search(data, arguments[1])
     elif arguments[0] == "diff":
-        print(f"{counter:0>3}   diff   {arguments[1]}   {arguments[2]}")
+        print(f"{counter:0>3}   diff   {arguments[1]}   {arguments[2]}", file=output_file)
         diff(data, arguments[1], arguments[2])
     elif arguments[0] == "mode":
-        print(f"{counter:0>3}   mode   {arguments[1]}")
+        print(f"{counter:0>3}   mode   {arguments[1]}", file=output_file)
         mode(data, arguments[1])
     counter += 1
-print(separator)
+print(separator, file=output_file)

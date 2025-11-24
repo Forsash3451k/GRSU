@@ -61,19 +61,25 @@ YKSUG
 <pre>
 PS C:\Users\User\source\repos\GRSU\1-year\FSE\Lab-5\A4> & "C:/Program Files/Python312/python.exe" c:/Users/User/source/repos/GRSU/1-year/FSE/Lab-5/A4/A4.py
 Введите цифру в названии файла, который вы хотите открыть (к примеру X в commands.X.txt и sequences.X.txt): 0
+PS C:\Users\User\source\repos\GRSU\1-year\FSE\Lab-5\A4> 
+</pre>
+
+#### Выходной файл (genedata.0.txt)
+
+<pre>
 Dzemyanovich Mikhail
 Genetic Searching
 --------------------------------------------------------------------------
 001   search   SIIK
-organism                                protein
+organism				protein
 Homo sapiens (Human)          6.8 kDa mitochondrial proteolipid
 --------------------------------------------------------------------------
 002   search   PLML
-organism                                protein
+organism				protein
 Homo sapiens (Human)          Pre-T/NK cell associated protein 6H9A
 --------------------------------------------------------------------------
 003   search   FK3I
-organism                                protein
+organism				protein
 NOT FOUND
 --------------------------------------------------------------------------
 004   diff   6.8 kDa mitochondrial proteolipid   Alcohol dehydrogenase
