@@ -97,7 +97,6 @@ namespace ConsoleApp2
                 using var brush = new SolidBrush(colors[i]);
                 g.FillRectangle(brush, x, y, squareSize, squareSize);
 
-                // Move to next position
                 if ((i + 1) % columns == 0)
                 {
                     x = margin;
